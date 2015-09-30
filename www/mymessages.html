@@ -1,0 +1,58 @@
+<ion-view title="My messages" ng-controller="MyMessageCtrl"  ng-init="getAll()"  hide-back-button="true">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+    <div class="bar bar-subheader">
+   <div style="padding: 4px">
+	Feeds found: <b>{{rss.length}} </b>
+	</div>
+</div>
+  <ion-content class="has-subheader">
+    <!--<h3 style="text-align: center;">My messages</h3>-->
+	
+	<!--<div class="card item" ng-model="elibrary.length">
+	Feeds found: <b>{{rss.length}} </b>
+	</div>-->
+	
+	<div class="card" ng-repeat="r in rss" >
+	  <div class="item item-divider item-positive">
+      {{r.title[0]}}
+    </div>
+	<div class="item item-text-wrap">
+	   
+       {{r.description[0]}}
+	</div>
+	<div style="padding: 4px;">
+	<button class="button button-small fixbutton" ng-click="openUrl('{{r.link[0]}}')" ><i class="icon ion-ios-world"></i> View</button>
+	<span sclass="button-clear" style="color: gray;">{{r.link[0]}}</span>
+	</div>
+	</div>
+    
+	<!--
+    <div class="list">
+  <label class="item item-input">
+    <input type="text" placeholder="First Name">
+  </label>
+  <label class="item item-input">
+    <input type="text" placeholder="Last Name">
+  </label>
+  <label class="item item-input">
+    <textarea placeholder="Comments"></textarea>
+  </label>
+</div>
+
+
+<div class="list">
+  <label class="item item-input">
+    <span class="input-label">Username</span>
+    <input type="text">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Password</span>
+    <input type="password">
+  </label>
+</div>
+    -->
+    
+  </ion-content>
+</ion-view>

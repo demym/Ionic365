@@ -1,0 +1,245 @@
+<ion-view title="Try and buy" ng-controller="TrybuyCtrl"  ng-init="getAll()"  hide-back-button="true">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-loop" ng-click="getAll()"></button>
+  </ion-nav-buttons>
+  <div class="bar bar-subheader barx">
+  <div class="button-bar">
+  <a class="button active" onclick="clickTrybuyTab(this,'')">All</a>
+  <a class="button" onclick="clickTrybuyTab(this,'Analytics')">Analytics</a>
+  <a class="button"onclick="clickTrybuyTab(this,'DevOps')">DevOps</a>
+
+</div>
+ <div class="button-bar">
+    <a class="button"onclick="clickTrybuyTab(this,'InternetThings')">Internet of Things</a>
+  <a class="button" onclick="clickTrybuyTab(this,'Messaging')">Messaging</a>
+  <a class="button" onclick="clickTrybuyTab(this,'video')">Video</a>
+</div>
+</div>
+  
+  <ion-content class="has-subheaderx">
+  
+   
+  <!--<div class="tabs-striped tabs-color-assertive">
+    <div class="tabs">
+      <a class="tab-item active" href="#">
+        <i sclass="icon ion-home"></i>
+        Test
+      </a>
+      <a class="tab-item" href="#">
+        <i sclass="icon ion-star"></i>
+        Favorites
+      </a>
+      <a class="tab-item" href="#">
+        <i sclass="icon ion-gear-a"></i>
+        Settings
+      </a>
+    </div>
+  </div>-->
+  
+  <div class="row responsive-md" style="width:98%"  ng-repeat="try in trybuy | filter : data.filter.category" ng-if="$index % 3 === 0">
+  
+    <div class="col col-33 tile card cardx trybuy_{{trybuy[$index].doc.category}}" ng-if="$index < trybuy.length">
+	 <div class="item item-divider item-positive"  >
+      {{trybuy[$index].doc.category}}
+    </div>
+     <div class="item" style="width: 100%; padding: 8px;">
+	  <div style="float: left; width: 150px">
+	    <img src="{{trybuy[$index].doc.imageurl}}" style="width: 110px; height: 110px;" />
+	 </div>
+	  <div class=" item-text-wrap" style="margin-left: 150px; height: 100px;">
+	   
+       {{trybuy[$index].doc.title}}<!--<br>
+		{{try.doc.url}}<br><br>-->
+		<br><br>
+		<button class="button " ng-click="openUrl('{{trybuy[$index].doc.url}}')"><i class="icon ion-play"></i>  Try</button>
+	  </div>
+	 </div>
+    </div>
+	
+        <div class="col col-33 tile card cardx trybuy_{{trybuy[$index+1].doc.category}}" ng-if="$index + 1 < trybuy.length">
+		 <div class="item item-divider item-positive">
+      {{trybuy[$index+1].doc.category}}
+    </div>
+         <div class="item" style="width: 100%; padding: 8px;">
+	  <div style="float: left; width: 150px">
+	    <img src="{{trybuy[$index+1].doc.imageurl}}" style="width: 110px; height: 110px;" />
+	 </div>
+	  <div class=" item-text-wrap" style="margin-left: 150px; height: 100px;">
+	   
+       {{trybuy[$index+1].doc.title}}<!--<br>
+		{{try.doc.url}}<br><br>-->
+		<br><br>
+		<button class="button " ng-click="openUrl('{{trybuy[$index+1].doc.url}}')"><i class="icon ion-play"></i>  Try</button>
+	  </div>
+	 </div>
+        </div>
+		
+         <div class="col col-33 tile card cardx trybuy_{{trybuy[$index+2].doc.category}}" ng-if="$index + 2 < trybuy.length">
+		  <div class="item item-divider item-positive">
+      {{trybuy[$index+2].doc.category}}
+    </div>
+              
+	 <div class="item item-divider">
+      {{trybuy[$index+2].doc.category}}
+    </div>
+	<div class="item" style="width: 100%; padding: 8px;">
+	  <div style="float: left; width: 150px">
+	    <img src="{{trybuy[$index+2].doc.imageurl}}" style="width: 110px; height: 110px;" />
+	 </div>
+	  <div class=" item-text-wrap" style="margin-left: 150px; height: 100px;">
+	   
+       {{trybuy[$index+2].doc.title}}<!--<br>
+		{{try.doc.url}}<br><br>-->
+		<br><br>
+		<button class="button " ng-click="openUrl('{{trybuy[$index+2].doc.url}}')"><i class="icon ion-play"></i>  Try</button>
+	  </div>
+	 </div>
+        </div>
+		
+		
+          <!--   <div class=" col col-25 tile card" ng-if="$index +3 < trybuy.length">
+              <div class="item" style="width: 100%; padding: 8px;">
+	  <div style="float: left; width: 150px">
+	    <img src="{{trybuy[$index+3].doc.imageurl}}" style="width: 110px; height: 110px;" />
+	 </div>
+	  <div class=" item-text-wrap" style="margin-left: 150px; height: 100px;">
+	   
+       {{trybuy[$index+3].doc.title}}
+		<br><br>
+		<button class="button " ng-click="openUrl('{{trybuy[$index+3].doc.url}}')"><i class="icon ion-play"></i>  Try</button>
+	  </div>
+	 </div>
+        </div>
+		-->
+    </div>
+  
+
+  <!--
+    
+	<div class="row responsive-md" >
+	<div class="card col col-25" ng-repeat="try in trybuy" style="min-height: 200px;" >
+	  <div class="item item-divider">
+      {{try.doc.category}}
+      </div>
+	  <div class="item" style="width: 100%; padding: 8px;">
+	  <div style="float: left; width: 150px">
+	    <img src="{{try.doc.imageurl}}" style="width: 110px; height: 110px;" />
+	 </div>
+	  <div class=" item-text-wrap" style="margin-left: 150px; height: 100px;">
+	   
+       {{try.doc.title}}
+		<br><br>
+		<button class="button " ng-click="openUrl('{{try.doc.url}}')"><i class="icon ion-play"></i>  Try</button>
+	  </div>
+	  </div>
+	  <div class="item item-divider">
+      <i class="icon ion-edit"></i>  {{try.doc.url}}
+      </div>
+	 
+	</div>
+	</div> -->
+
+	<!--
+    
+    <ul class="list">
+
+  <li class="item item-toggle">
+     HTML5
+     <label class="toggle toggle-assertive">
+       <input type="checkbox">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+  </li>
+    <li class="item item-toggle">
+     HTML5
+     <label class="toggle toggle-assertive">
+       <input type="checkbox">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+  </li>
+
+
+
+</ul>
+    
+    
+    
+    
+    
+    
+    
+    <ul class="list">
+
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox">
+     </label>
+     Flux Capacitor
+  </li>
+
+ 
+
+</ul>
+    
+    
+    
+    <div class="list">
+
+  <label class="item item-radio">
+    <input type="radio" name="group">
+    <div class="item-content">
+      Go
+    </div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label>
+
+  
+
+</div>
+    
+    
+    
+    <div class="list">
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+      Lightsaber
+    </div>
+    <select>
+      <option>Blue</option>
+      <option selected>Green</option>
+      <option>Red</option>
+    </select>
+  </label>
+
+</div>
+    
+    
+    <div class="tabs">
+  <a class="tab-item">
+    Home
+  </a>
+  <a class="tab-item">
+    Favorites
+  </a>
+  <a class="tab-item">
+    Settings
+  </a>
+   <a class="tab-item">
+    Colgaz
+  </a>
+</div>
+
+-->
+    
+  </ion-content>
+  
+  
+</ion-view>

@@ -1,0 +1,190 @@
+<ion-view title="Reach Me" ng-controller="ReachmeCtrl"  ng-init="getAll()"  hide-back-button="true">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-loop" ng-click="getAll()"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+   
+    
+    <div class=" row responsive-md" style="width:98%" ng-repeat="reach in reachme" ng-if="$index % 2 === 0">
+  
+
+   	
+	<div class="card col col-50 tile cardx" ng-if="$index < reachme.length" >
+	  <div class="item item-divider item-positive reachmetitle">
+      <div >{{reachme[$index].doc.jobrole}}</div>
+      </div>
+	  <div class="item item-text-wrap" style="width: 100%; overflow: hidden;">
+	   <div style="float: left; width: 100px" class="sitem-avatar">
+	    <img src="{{reachme[$index].doc.photo}}" style="width: 70px; height: 70px" />
+		</div>
+		<div style="margin-left: 100px;">
+       <b>{{reachme[$index].doc.firstname}} {{reachme[$index].doc.lastname}}</b><br>
+		{{reachme[$index].doc.company}}<br>
+       <i class="icon ion-ios-telephone"></i> <i class="emphone">{{reachme[$index].doc.phone}}</i><br>
+	      <i class="icon ion-ios-email"></i> <i class="emphone">{{reachme[$index].doc.email}}</i>
+		</div>
+		</div>
+		<div style="width: 100%; padding: 6px;">
+		<button class="button " ng-click="openUrl('tel:{{reachme[$index].doc.phone}}')"><i class="icon ion-ios-telephone"></i> Call Me</button>
+		<button class="button " ng-click="openUrl('mailto:{{reachme[$index].doc.email}}')"><i class="icon ion-ios-email"></i> E-mail Me</button>
+		<!--<a href="tel:{{reach.doc.phone}}">{{reach.doc.phone}}</a><br>
+		<a href="mailto:{{reach.doc.email}}">{{reach.doc.email}}</a><br>-->
+		</div>
+	  
+	</div>
+	
+	
+	<div class="card col col-50 tile cardx" ng-if="$index + 1 < reachme.length" >
+	  <div class="item item-divider item-positive reachmetitle">
+      <div>{{reachme[$index+1].doc.jobrole}}</div>
+      </div>
+	  <div class="item item-text-wrap" style="width: 100%; overflow: hidden;">
+	   <div style="float: left; width: 100px">
+	    <img src="{{reachme[$index+1].doc.photo}}" style="width: 70px; height: 70px" />
+		</div>
+		<div style="margin-left: 100px;">
+       <b>{{reachme[$index].doc.firstname}} {{reachme[$index].doc.lastname}}</b><br>
+		{{reachme[$index].doc.company}}<br>
+       <i class="icon ion-ios-telephone"></i> <i class="emphone">{{reachme[$index].doc.phone}}</i><br>
+	      <i class="icon ion-ios-email"></i> <i class="emphone">{{reachme[$index].doc.email}}</i>
+		</div>
+		</div>
+		<div style="width: 100%; padding: 6px;">
+		<button class="button " ng-click="openUrl('tel:{{reachme[$index+1].doc.phone}}')"><i class="icon ion-ios-telephone"></i> Call Me</button>
+		<button class="button " ng-click="openUrl('mailto:{{reachme[$index+1].doc.email}}')"><i class="icon ion-ios-email"></i> E-mail Me</button>
+		<!--<a href="tel:{{reach.doc.phone}}">{{reach.doc.phone}}</a><br>
+		<a href="mailto:{{reach.doc.email}}">{{reach.doc.email}}</a><br>-->
+		</div>
+	  
+	</div>
+	<!--
+	<div class="card col col-33 tile" ng-if="$index + 2 < reachme.length" >
+	  <div class="item item-divider item-positive">
+      <div>{{reachme[$index+2].doc.jobrole}}</div>
+      </div>
+	  <div class="item item-text-wrap" style="width: 100%; overflow: hidden;">
+	   <div style="float: left; width: 100px">
+	    <img src="{{reachme[$index+2].doc.photo}}" style="width: 70px; height: 70px" />
+		</div>
+		<div style="margin-left: 100px;">
+       {{reachme[$index+2].doc.firstname}} {{reachme[$index+2].doc.lastname}}<br>
+		{{reachme[$index+2].doc.company}}<br>
+       tel: <i>{{reachme[$index+2].doc.phone}}</i><br>
+	      e-mail: <i>{{reachme[$index+2].doc.email}}</i>
+		</div>
+		</div>
+		<div style="width: 100%; padding: 6px;">
+		<button class="button " ng-click="openUrl('tel:{{reachme[$index+2].doc.phone}}')"><i class="icon ion-ios-telephone"></i> Call Me</button>
+		<button class="button " ng-click="openUrl('mailto:{{reachme[$index+2].doc.email}}')"><i class="icon ion-ios-email"></i> E-mail Me</button>
+		
+		</div>-->
+	  
+	</div>
+	
+	
+	
+	</div>
+	<!--
+    
+    <ul class="list">
+
+  <li class="item item-toggle">
+     HTML5
+     <label class="toggle toggle-assertive">
+       <input type="checkbox">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+  </li>
+    <li class="item item-toggle">
+     HTML5
+     <label class="toggle toggle-assertive">
+       <input type="checkbox">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+  </li>
+
+
+
+</ul>
+    
+    
+    
+    
+    
+    
+    
+    <ul class="list">
+
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox">
+     </label>
+     Flux Capacitor
+  </li>
+
+ 
+
+</ul>
+    
+    
+    
+    <div class="list">
+
+  <label class="item item-radio">
+    <input type="radio" name="group">
+    <div class="item-content">
+      Go
+    </div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label>
+
+  
+
+</div>
+    
+    
+    
+    <div class="list">
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+      Lightsaber
+    </div>
+    <select>
+      <option>Blue</option>
+      <option selected>Green</option>
+      <option>Red</option>
+    </select>
+  </label>
+
+</div>
+    
+    
+    <div class="tabs">
+  <a class="tab-item">
+    Home
+  </a>
+  <a class="tab-item">
+    Favorites
+  </a>
+  <a class="tab-item">
+    Settings
+  </a>
+   <a class="tab-item">
+    Colgaz
+  </a>
+</div>
+
+-->
+    
+  </ion-content>
+  
+  
+</ion-view>

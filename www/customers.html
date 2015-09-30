@@ -1,0 +1,30 @@
+<ion-view title="Customers" ng-controller="AdminCtrl"  ng-init="getCustomers()">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+  
+  
+   <ion-list>
+      <ion-item ng-repeat="cust in customers" > 
+	  <div style="float: left; width: 80%">
+	   <b>{{cust.doc.customername}}</b><br> 
+        {{cust.doc.firstname}} {{cust.doc.lastname}}<br> 
+		{{cust.doc.isr_name}}<br>
+		{{cust.doc.isr_email}}<br>
+		{{cust.doc.isr_personalpage}}<br>
+		</div>
+		<div>
+		<button class="button button-small fixbutton" ng-click="editCustomer($index)" ><i class="icon ion-edit"></i> Edit</button>
+		<button class="button button-small fixbutton" ng-click="deleteCustomer($index)" ><i class="icon ion-trash-a"></i> Delete</button>
+		</div>
+      </ion-item>
+    </ion-list>
+	
+	
+  
+</ion-content>
+</ion-view>

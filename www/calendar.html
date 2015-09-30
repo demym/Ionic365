@@ -1,0 +1,17 @@
+<ion-view view-title="Agenda"  ng-controller="EventCtrl">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-loop" ng-click="getAll()"></button>
+  </ion-nav-buttons>
+  
+  <ion-content class="padding">
+    <!--<div id="eventCalendar" ui-calendar="uiConfig.calendar" ng-model="eventSources" scalendar="eventCalendar"></div>-->
+	
+	
+	
+	 <div ui-calendar ng-model="eventSources"></div> 
+	
+  </ion-content>
+</ion-view>

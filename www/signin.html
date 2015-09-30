@@ -1,0 +1,33 @@
+<ion-view view-title="Register new user" ng-controller="SigninCtrl" >
+  <ion-content class="padding">
+  <p style="text-align: center">
+  Fill in the registration form to request activation of a new userID
+  
+  </p>
+  <br><br>
+
+  <label class="item item-input  item-stacked-label">
+  <span class="input-label">First Name</span>
+    <input ng-model="data.firstname" type="text" placeholder="First Name">
+  </label>
+  <label class="item item-input  item-stacked-label">
+  <span class="input-label">Last Name</span>
+    <input ng-model="data.lastname" type="text" placeholder="Last Name">
+  </label>
+  <label class="item item-input  item-stacked-label">
+  <span class="input-label">E-mail</span>
+    <input   ng-model="data.email" type="text" placeholder="e-mail" />
+  </label>
+   <label class="item item-input  item-stacked-label">
+  <span class="input-label">Customer</span>
+    <input ng-model="data.customer" type="text" placeholder="customer">
+  </label>
+  <label class="item item-input  item-stacked-label">
+  <span class="input-label">IBM seller name</span>
+    <input ng-model="data.seller" type="text" placeholder="IBM seller">
+  </label>
+  <br><br>
+  <button class="button button-block button-calm" ng-click="goSignin()">Send registration request</button>
+
+  </ion-content>
+</ion-view>

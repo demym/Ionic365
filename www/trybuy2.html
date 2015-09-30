@@ -1,0 +1,112 @@
+<ion-view title="Try and buy" ng-controller="TrybuyCtrl"  ng-init="getAll()"  hide-back-button="true">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-refresh" ng-click="getAll()"></button>
+  </ion-nav-buttons>
+  <div class="bar bar-subheader">
+  
+     <div class="slayout">
+    <div class="sfilter-items">
+        <a class="button filter-label filter-labelTB active " style="width:100px">All</a>
+        <a class="button filter-label filter-labelTB btn-Analytics w100" data-filter=".Analytics">Analytics</a>
+        <a class="button filter-label filter-labelTB btn-Messaging w100" data-filter=".Messaging" >Messaging</a>
+		<a class="button filter-label filter-labelTB btn-InternetThings w100" data-filter=".InternetThings" >Internet of Things</a>
+		<a class="button filter-label filter-labelTB btn-BusinessSupport w100" data-filter=".BusinessSupport" >Business Support</a>
+		<a class="button filter-label filter-labelTB btn-DevOps w100" data-filter=".DevOps" >DevOps</a>
+      </div>
+	  </div>
+	<!--  <div class="layout">
+	  <div class="filter-items">
+				<div class="filter-label filter-labelTB" >All</div>
+				<div class="filter-label filter-labelTB btn-Analytics active" data-filter=".Analytics">Analytics and Big Data</div>
+				<div class="filter-label filter-labelTB btn-Messaging" data-filter=".Messaging">Messaging</div>
+				<div class="filter-label filter-labelTB btn-InternetThings" data-filter=".InternetThings">Internet of Things</div>
+				<div class="filter-label filter-labelTB btn-BusinessSupport" data-filter=".BusinessSupport">Business Support</div>
+				<div class="filter-label filter-labelTB btn-DevOps" data-filter=".DevOps">DevOps</div>
+			</div>
+	  </div>-->
+  </div>	
+
+	
+  <ion-content class=" has-subheader">
+   
+   
+   		<style type="text/css">
+		
+			.layout {
+				padding: 15px;
+			}
+
+			.free-wall {
+			}
+			.brick {
+				width: 221px;
+			}
+			
+			.filter-items {
+				padding: 10px 0px;
+				margin-top: 30px;
+			}
+
+		</style>
+	<!-- Pagina Try & Buy -->
+		<div class="layout">
+			
+			<div id="freewallTryBuy" class="free-wall"></div>
+		</div>
+	<!-- Fine Try & Buy -->
+	 <style>
+
+@font-face {
+	font-family: 'LubalinforIBM-Demi';
+	src: url('fonts/LubalinforIBM-Demi.eot');
+	src: local('☺'), url('fonts/LubalinforIBM-Demi.woff') format('woff'), url('fonts/LubalinforIBM-Demi.ttf') format('truetype'), url('fonts/LubalinforIBM-Demi.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.tile .industry-label {
+    font-family: 'LubalinGraphStdBookIBM',Helvetica,sans-serif;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+
+	
+	
+.familyfiltro{
+    font-family: 'LubalinGraphStdBookIBM',Helvetica,sans-serif;
+    font-size: 14px;
+	color: #fff;
+	height: 45px;
+}
+.imagefiltro{
+	background-color: #fff;
+}
+.bodyfiltro{
+	background-color: #fff;
+	padding-top: 20px;
+}
+.linkfiltro{
+	background-color: #fff;
+}
+
+.btn-DevOps{background: rgb(39, 174, 96);}
+.btn-BusinessSupport{background: rgb(243, 156, 18);}
+.btn-InternetThings{background: rgb(41, 128, 185);}
+.btn-Messaging{background: rgb(192, 57, 43);}
+.btn-Analytics{background: rgb(0, 106, 63);} 
+
+</style>
+   
+   
+   
+ 
+  </ion-content>
+  
+ 
+  
+  
+</ion-view>

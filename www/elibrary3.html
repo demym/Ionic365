@@ -1,0 +1,139 @@
+<ion-view title="E-library" ng-controller="ElibraryCtrl"  ng-init="getElibrary()"  hide-back-button="true">
+
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-loop" ng-click="getElibrary()"></button>
+  </ion-nav-buttons>
+  <div class="bar bar-subheader barx">
+   <!-- <div style="padding: 4px">
+	Documents found: <b>{{elibrary.length}}</b>
+	</div>-->
+  <div class="button-bar">
+  <a class="button active" onclick="clickElibTab(this,'')">All</a>
+  <a class="button" onclick="clickElibTab(this,'video')">Video</a>
+  <a class="button"onclick="clickElibTab(this,'pdf')">Pdf</a>
+</div>
+ 
+ </div>	
+  
+  
+  
+  <ion-content class="has-subheader" sstyle="top:45px">
+ <style type="text/css">
+			#elibWall {
+				margin: 15px;
+			}
+			.cell {
+			  border: 1px solid gray;
+			  width: 180px;
+			  height: 180px;
+			  background: #f5f5f5;
+			}
+			#elibwall .button {
+			  height: 15px;
+			}
+		</style>
+	<div id="elibwall" style="width: 100%">	
+		
+<div id="selibwall" class=" row responsive-md" style="width:98%" ng-repeat="doc in elibrary" ng-if="$index % 3 === 0">
+  
+
+    
+  <div class="card col col-33 tile cardx elib_{{elibrary[$index].tipo}}" ng-if="$index < elibrary.length"   >
+	 <!-- <div class="item item-divider">
+    
+      </div>-->
+	  <div class="item item-divider item-positive reachmetitle">
+      {{elibrary[$index].doc.titolo}}
+      </div>
+	  <div class="item">
+	   
+	    <div style="float: left; width: 60px; height: 60px">
+	       <img ng-src="{{doc.imgurl}}" ng-click="viewDoc(elibrary[$index].doc)" style="width:50px; height: 50px" />
+	    </div>
+	    <div>
+        <!--  {{elibrary[$index].doc.tipo}}-->added 30/09/2015
+	    </div>	
+	  </div>
+	   <!--<div class="item item-text-wrap">
+	       <b>{{elibrary[$index].doc.titolo}}</b>
+	    </div>-->
+	 
+	  <div style="width: 100%; padding: 8px;">
+		<button class="button button-small" ng-show="isIBM_SALESREP" ng-click="selectShareUsers('{{elibrary[$index]}}')"><i class="icon ion-share"></i> Share</button>
+		
+		<!--<a href="tel:{{reach.doc.phone}}">{{reach.doc.phone}}</a><br>
+		<a href="mailto:{{reach.doc.email}}">{{reach.doc.email}}</a><br>-->
+	  </div>
+	</div>
+	
+	 <div class="card col col-33 tile cardx elib_{{elibrary[$index+1].tipo}}" ng-if="$index+1 < elibrary.length"   >
+	 <!-- <div class="item item-divider">
+    
+      </div>-->
+	  <div class="item item-divider item-positive reachmetitle">
+      {{elibrary[$index+1].doc.titolo}}
+      </div>
+	  <div class="item">
+	   
+	    <div style="float: left; width: 60px; height: 60px">
+	       <img ng-src="{{elibrary[$index+1].imgurl}}" ng-click="viewDoc(elibrary[$index+1].doc)" style="width:50px; height: 50px" />
+	    </div>
+	    <div>
+          {{elibrary[$index+1].doc.tipo}}
+	    </div>	
+	  </div>
+	  <!-- <div class="item item-text-wrap">
+	       <b>{{elibrary[$index+1].doc.titolo}}</b>
+	  </div>-->
+	    <div style="width: 100%; padding: 8px;">
+		<button class="button button-small " ng-show="isIBM_SALESREP" ng-click="selectShareUsers('{{elibrary[$index+1]}}')"><i class="icon ion-share"></i> Share</button>
+		
+		<!--<a href="tel:{{reach.doc.phone}}">{{reach.doc.phone}}</a><br>
+		<a href="mailto:{{reach.doc.email}}">{{reach.doc.email}}</a><br>-->
+	  </div>
+	</div>
+	
+		 <div class="card col col-33 tile cardx elib_{{elibrary[$index+2].tipo}}" ng-if="$index+2 < elibrary.length"   >
+	 <!-- <div class="item item-divider">
+    
+      </div>-->
+	  <div class="item item-divider item-positive reachmetitle">
+      {{elibrary[$index+2].doc.titolo}}
+      </div>
+	  <div class="item">
+	  
+	    <div style="float: left; width: 60px; height: 60px">
+	       <img ng-src="{{elibrary[$index+2].imgurl}}" ng-click="viewDoc(elibrary[$index+2].doc)"  style="width:50px; height: 50px" />
+	    </div>
+	    <div>
+          {{elibrary[$index+2].doc.tipo}}
+	    </div>	
+	  </div>
+	  <!--<div class="item item-text-wrap">
+	       <b>{{elibrary[$index+2].doc.titolo}}</b>
+	  </div>-->
+	  
+	    <div style="width: 100%; padding: 8px;">
+		<button class="button button-small" ng-show="isIBM_SALESREP" ng-click="selectShareUsers('{{elibrary[$index+2]}}')"><i class="icon ion-share"></i> Share</button>
+		
+		<!--<a href="tel:{{reach.doc.phone}}">{{reach.doc.phone}}</a><br>
+		<a href="mailto:{{reach.doc.email}}">{{reach.doc.email}}</a><br>-->
+	  </div>
+	</div>
+  
+
+	 
+	</div>
+	
+	
+	
+	</div>
+  
+  
+    
+  
+</ion-content>
+</ion-view>

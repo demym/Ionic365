@@ -1,0 +1,118 @@
+<ion-view title="Users" ng-controller="AdminCtrl"  ng-init="getUsers()">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+  <button class="button button-clear " ng-click="addUser()">Add user</button>
+    <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  
+   <ion-header-bar class="bar-subheader " style="height: 55px;">
+  <div sclass="list" style="float: left; width:230px; ">
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+      Show users
+    </div>
+  <select ng-model="f" ng-change="filterUsers(f.id)" ng-options="f.label for f in usersFilter" >
+    
+  </select>
+  </label>
+  <!--
+  <label class="item item-input item-select">
+    <div class="input-label">
+      Show users
+    </div>
+    <select>
+      <option selected>All</option>
+      <option>Active</option>
+      <option>Not active</option>
+    </select>
+  </label>
+-->
+</div>
+ </ion-header-bar>
+  <ion-content class="has-subheader">
+    <div class="row header item item-positive">
+          <div class="col col-20">Name</div>
+          <div class="col col-20">E-mail</div>
+          <div class="col">Company</div>
+          <div class="col">Jobrole</div>
+		  <div class="col">Active</div>
+          <div class="col col-10"></div>
+        </div>
+        <div class="row" ng-repeat="user in users" style="border-bottom: 1px solid silver; padding: 2px; background: {{user.rowcolor}}">
+          <div class="col col-20"><b>{{user.doc.lastname+" "+user.doc.firstname}}</b></div>
+          <div class="col col-20">{{user.doc.email}}</div>
+          <div class="col">{{user.doc.company}}</div>
+          <div class="col">{{user.doc.jobrole}}</div>
+		  <div class="col">{{user.doc.useractive}}</div>
+          <div class="col col-10"><button class="button button-small sfixbutton" ng-click="editUser($index)" ><i class="icon ion-edit"></i> &nbsp;</button>
+		<button class="button button-small sfixbutton" ng-click="deleteUser($index)" ><i class="icon ion-trash-a"></i> &nbsp;</button></div>
+        </div>
+	</div>	
+ 
+ 
+   
+  <!--
+   <ion-list>
+      <ion-item class="item" ng-repeat="user in users | filter:filter" >
+	    <div style="float: left; width: 8%">
+		<button class="button button-small sfixbutton" ng-click="editUser($index)" ><i class="icon ion-edit"></i> &nbsp;</button>
+		<button class="button button-small sfixbutton" ng-click="deleteUser($index)" ><i class="icon ion-trash-a"></i> &nbsp;</button>
+       
+		</div>
+		<div style="overflow: hidden">
+		 <b>{{user.doc.firstname}} {{user.doc.lastname}}</b><br>
+		{{user.doc.email}}<br>
+		{{user.doc.company}}<br>
+		{{user.doc.jobrole}}<br>
+		<b>{{user.doc.useractive}}</b><br>
+		</div>
+		
+      </ion-item>
+    </ion-list>
+	
+	-->
+	
+	<!--
+    
+    <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
+    <div class="tabs">
+      <a class="tab-item active" href="#">
+        <i class="icon ion-home"></i>
+        Test
+      </a>
+      <a class="tab-item" href="#">
+        <i class="icon ion-star"></i>
+        Favorites
+      </a>
+      <a class="tab-item" href="#">
+        <i class="icon ion-gear-a"></i>
+        Settings
+      </a>
+    </div>
+  </div>
+  <div class="tabs-striped tabs-color-assertive">
+    <div class="tabs">
+      <a class="tab-item active" href="#">
+        <i class="icon ion-home"></i>
+        Test
+      </a>
+      <a class="tab-item" href="#">
+        <i class="icon ion-star"></i>
+        Favorites
+      </a>
+      <a class="tab-item" href="#">
+        <i class="icon ion-gear-a"></i>
+        Settings
+      </a>
+    </div>
+  </div>
+  
+
+    -->
+    
+  
+</ion-content>
+</ion-view>

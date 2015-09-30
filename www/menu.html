@@ -1,0 +1,110 @@
+<ion-side-menus enable-menu-with-back-views="true">
+
+  <ion-pane ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button class="button-clear"><i class="icon ion-chevron-left"></i> Back</ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+	<!--<ion-nav-view name="plannerContent" animation="slide-left-right"></ion-nav-view>-->
+  </ion-pane>
+
+ 
+		
+  
+  <ion-side-menu side="left">
+    <header class="bar bar-header bar-stable">
+      <h1 class="title">&nbsp;</h1>
+    </header>
+    <ion-content class="has-header">
+      <ion-list>
+        <ion-item nav-clear menu-close href="#/app/homepage">
+          <i class="icon ion-home"></i>&nbsp;&nbsp;Homepage
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/planner">
+          <i class="icon ion-calendar"></i>&nbsp;&nbsp;Planning
+        </ion-item>
+		<ion-item nav-clear menu-close href="#/app/reachme">
+          <i class="fa fa-street-view"></i>&nbsp;&nbsp;Reach Me
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/elibrary">
+          <i class="icon ion-ios-book"></i>&nbsp;&nbsp;E-library
+        </ion-item>
+		<ion-item nav-clear menu-close href="#/app/trybuy">
+          <i class="icon ion-help-buoy"></i>&nbsp;&nbsp;Try and Buy
+        </ion-item>
+         <ion-item nav-clear menu-close href="#/app/mymessages">
+		 <i class="icon ion-ios-recording"></i>&nbsp;&nbsp;My feeds
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/social">
+          <i class="fa fa-comments-o"></i>&nbsp;&nbsp;Social
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/tools">
+          <i class="fa fa-puzzle-piece"></i>&nbsp;&nbsp;Tools
+        </ion-item>
+
+	
+		
+        <!--      <ion-item nav-clear menu-close href="#/app/minchioni">
+          <i class="icon ion-refresh"></i>&nbsp;&nbsp;Minchioni
+        </ion-item>-->
+		<!--     <ion-item nav-clear menu-close href="#/app/users">
+          <i class="icon ion-person"></i>&nbsp;&nbsp;Users
+        </ion-item>-->
+		<!--   <ion-item nav-clear menu-close href="#/app/shares">
+          <i class="icon ion-share"></i>&nbsp;&nbsp;Shares
+        </ion-item>-->
+        <!--      <ion-item nav-clear menu-close href="#/app/playlists">
+          <i class="icon ion-ios-play"></i>&nbsp;&nbsp;PLaylists
+        </ion-item>-->
+		<ion-item nav-clear menu-close href="#" ng-controller="AppCtrl" ng-click="logOut()">
+          <i class="icon ion-log-in"></i>&nbsp;&nbsp;Logout
+        </ion-item>
+		<ion-item nav-clear menu-close href="#" ng-controller="AppCtrl" ng-click="closeApp()">
+          <i class="icon ion-android-exit"></i>&nbsp;&nbsp;Close Client365
+        </ion-item>
+		 <ion-item nav-clear menu-close href="#/app/calendar">
+		 <i class="icon ion-ios-recording"></i>&nbsp;&nbsp;Calendar
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+  
+  
+
+  <ion-side-menu side="right" ng-controller="HomepageCtrl">
+    <header class="bar bar-header bar-stable">
+      <h1 class="title">My Account</h1>
+    </header>
+    <ion-content class="has-header">
+      <ion-list>
+        <ion-item nav-clear menu-close  style="font-size: 13px" >
+          <b>{{useremail}}</b><br>
+		   {{username}}<br>
+		   <span style="color: gray">{{userrole}}<span>
+        </ion-item>
+       
+         <ion-item nav-clear menu-close href="#/app/mymessages">
+		 <i class="icon ion-ios-recording"></i>&nbsp;&nbsp;Change password
+        </ion-item>
+		<ion-item nav-clear menu-close ng-controller="HomepageCtrl" sng-show="showAdmin" href="#/appadmin/admin">
+		 <i class="icon ion-ios-recording"></i>&nbsp;&nbsp;Administration
+        </ion-item>
+       
+		<ion-item nav-clear menu-close href="#" ng-controller="AppCtrl" ng-click="logOut()">
+          <i class="icon ion-log-in"></i>&nbsp;&nbsp;Logout
+        </ion-item>
+		<ion-item nav-clear menu-close href="#" ng-controller="AppCtrl" ng-click="closeApp()">
+          <i class="icon ion-android-exit"></i>&nbsp;&nbsp;Close Client365
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+
+   
+  
+  
+  
+
+  
+</ion-side-menus>
+

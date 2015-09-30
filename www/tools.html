@@ -1,0 +1,60 @@
+<ion-view title="Tools" ng-controller="ToolsCtrl"  ng-init="getTools()"  hide-back-button="true">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-loop" ng-click="getAll()"></button>
+  </ion-nav-buttons>
+  
+  <ion-content class="has-header has-header">
+  <div class="row responsive-sm" style="width:97%; padding: 3px;"  ng-repeat="tool in tools" ng-if="$index % 3 === 0"  >
+  
+    <div class="col col-33 card  " style="width:200px; margin: 3px;" ng-if="$index < tools.length" >
+	 <div class="item item-divider item-positive"  >
+      {{tools[$index].type}}
+    </div>
+	<div>
+	  <img src="{{tools[$index].imgurl}}" style="width: 100%; height: 200px; " />
+	</div>
+     <div class="item item-text-wrap" style="width: 100%; padding: 8px; background: black; color: white; min-height: 80px;">
+	  {{tools[$index].descr}}
+	 </div>
+    </div>
+	
+	   <div class="col col-33 card  " style="width:200px; margin: 3px;" ng-if="$index+1 < tools.length" >
+	 <div class="item item-divider item-positive"  > 
+	 {{tools[$index+1].type}}
+	 </div>
+	<div>
+	  <img src="{{tools[$index+1].imgurl}}" style="width: 100%; height: 200px; " />
+	</div>
+     <div class="item item-text-wrap" style="width: 100%; padding: 8px; background: black; color: white; min-height: 80px;">
+	  {{tools[$index+1].descr}}
+	 </div>
+    </div>
+	
+	   <div class="col col-33 card  " style="width:200px; margin: 3px;" ng-if="$index+2 < tools.length" >
+	 <div class="item item-divider item-positive"  >
+      {{tools[$index+2].type}}
+    </div>
+	<div>
+	  <img src="{{tools[$index+2].imgurl}}" style="width: 100%; height: 200px; " />
+	</div>
+     <div class="item item-text-wrap" style="width: 100%; padding: 8px; background: black; color: white; min-height: 80px;">
+	  {{tools[$index+2].descr}}
+	 </div>
+    </div>
+	
+	
+	
+	
+	
+	</div>
+  
+
+ 
+    
+  </ion-content>
+  
+  
+</ion-view>

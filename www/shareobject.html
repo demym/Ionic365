@@ -1,0 +1,53 @@
+<ion-view title="Share with" ng-controller="SharewithCtrl"    hide-back-button="true">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-loop" ng-click="getUsers()"></button>
+  </ion-nav-buttons>
+  <div class="bar bar-subheader">
+  
+     <div class="slayout">
+    <div class="sfilter-items">
+        <a class="button filter-label filter-labelTB active " style="width:100px">All</a>
+        <a class="button filter-label filter-labelTB btn-Analytics w100" data-filter=".Analytics">Analytics</a>
+        <a class="button filter-label filter-labelTB btn-Messaging w100" data-filter=".Messaging" >Messaging</a>
+		<a class="button filter-label filter-labelTB btn-InternetThings w100" data-filter=".InternetThings" >Internet of Things</a>
+		<a class="button filter-label filter-labelTB btn-BusinessSupport w100" data-filter=".BusinessSupport" >Business Support</a>
+		<a class="button filter-label filter-labelTB btn-DevOps w100" data-filter=".DevOps" >DevOps</a>
+      </div>
+	  </div>
+	<!--  <div class="layout">
+	  <div class="filter-items">
+				<div class="filter-label filter-labelTB" >All</div>
+				<div class="filter-label filter-labelTB btn-Analytics active" data-filter=".Analytics">Analytics and Big Data</div>
+				<div class="filter-label filter-labelTB btn-Messaging" data-filter=".Messaging">Messaging</div>
+				<div class="filter-label filter-labelTB btn-InternetThings" data-filter=".InternetThings">Internet of Things</div>
+				<div class="filter-label filter-labelTB btn-BusinessSupport" data-filter=".BusinessSupport">Business Support</div>
+				<div class="filter-label filter-labelTB btn-DevOps" data-filter=".DevOps">DevOps</div>
+			</div>
+	  </div>-->
+  </div>	
+
+	
+  <ion-content class=" has-header">
+   
+<ul class="list">
+
+  <li class="item item-checkbox" ng-repeat="user in users">
+     <label class="checkbox">
+       <input type="checkbox">
+     </label>
+     Flux Capacitor
+  </li>
+
+  
+
+</ul>
+ 
+  </ion-content>
+  
+ 
+  
+  
+</ion-view>

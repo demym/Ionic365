@@ -1,0 +1,42 @@
+<ion-view view-title="IBM Client365 login" name="login-view">
+  <ion-content class="padding">
+  
+  <!--<div class="card " style="text-align: center; background: transparent url('img/logo/madewithIBM4.png') repeat scroll 0% 0% / contain ">
+    Welcome to IBM Client365<br><br>
+	Please login 
+	
+	</div>-->
+	
+	 <div class="scardx stile card pad8 " style="background:purple; background-image: url(img/welcome_background.png) " >
+	
+     <!--<div class="sitem" style="width: 100%; spadding: 8px;">
+	  <div style="float: left; swidth: 150px" class="feature-wrap circle TestoIconFreeWallNone">
+	  
+	  <img src="img/logo/madewithIBM4.png" class="loginimage" style="width:110x; height: 110px;" />
+	  
+	 </div>-->
+	  <div class=" item-text-wrap" style="smargin-left: 150px; height: 90px; ">
+	      <div class="cover">
+	    <h4>Welcome to<h4>
+		<h2>IBM Client365</h2>
+	   </div>	
+	  </div>
+	 </div>
+    </div>
+  
+      <div class="list list-inset">
+          <label class="item item-input">
+              <input type="text" placeholder="Username" ng-model="data.username">
+          </label>
+          <label class="item item-input">
+              <input type="password" placeholder="Password" ng-model="data.password">
+          </label>
+      </div>
+	  <ion-checkbox ng-model="data.isChecked">Remember me</ion-checkbox>
+      <button class="button button-block button-calm" ng-click="login()">Login</button>
+	  <button class="button button-block button-calm" ng-click="ibmlogin()">Login with IBM ID</button>
+	  <br><br>
+	  
+	   <button class="button button-block button-calm" ng-click="signin()">Register new User</button>
+  </ion-content>
+</ion-view>

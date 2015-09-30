@@ -1,0 +1,8 @@
+/* Styles go here */
+
+.tile {
+ min-width: 180px;
+ min-height: 180px;
+ border: 1px solid silver;
+ 
+}

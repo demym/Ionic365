@@ -1,0 +1,70 @@
+
+<ion-view title="Planner" ng-controller="PlannerCtrl"  ng-init="getPlanner()"  hide-back-button="true">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button menu-toggle="right" class="button button-icon icon ion-loop" sng-click="getPlanner()"></button>
+  </ion-nav-buttons>
+  <div class="bar bar-subheader">
+   <div style="padding: 4px">
+	Events found: <b>{{events.length}}</b>
+	</div>
+</div>
+  <ion-content class="has-subheader">
+
+	
+	
+  <div id="planner" ng-if="planner_visible">
+	<div class="card " ng-repeat="event in events" >
+	  <div class="item item-divider item-positive">
+	  <input type="hidden" class="evstart" value="{{event.doc.start}}" />
+	  {{event.eventdate}} &nbsp;&nbsp;{{event.source}}
+    </div>
+	<div class="item item-text-wrap">
+        <b>{{event.doc.title}}</b><br>
+		{{event.doc.location}}<input type="hidden" class="hideventtype" value="{{event.doc.eventtype}}" />
+	</div>
+	<div style="padding: 4px">
+	<button class="button button-small fixbutton" ng-show="isIBM_SALESREP" ng-click="selectShareUsers('{{$index}}')"><i class="icon ion-share"></i> Share</button>
+	<button class="button button-small fixbutton"  ng-click="openUrl('{{event.doc.regurl}}')"><i class="icon ion-card"></i> Register</button>
+	<button class="button button-small fixbutton" ng-click="openUrl('{{event.doc.url}}')" ><i class="icon ion-ios-world"></i> Site</button>
+	
+	
+	</div>
+	</div>
+</div>	
+
+
+	<div id="calendar" ng-if="calendar_visible">
+	
+	<div ui-calendar config="uiConfig.calendar" ng-model="eventSources"></div> 
+ 
+     </div>
+     
+  </ion-content>
+<ion-footer-bar align-title="left" class="bar-light">
+  <!--<div class="buttons">
+    <button class="button">Left Button</button>
+  </div>
+  <h1 class="title">Title!</h1>
+  <div class="buttons" ng-click="doSomething()">
+    <button class="button">Right Button</button>
+  </div>-->
+<div class="tabs-icon-left stabs-striped tabs-color-assertive">
+    <div class="tabs">
+      <a class="tab-item active" href="#" ng-click="showPlanner()">
+        <i class="icon ion-ios-list-outline"></i>
+        Events list
+      </a>
+      <a class="tab-item" href="#" ng-click="showCalendar()">
+        <i class="icon ion-calendar"></i>
+        Agenda view
+      </a>
+      
+    </div>
+  </div>
+</ion-footer-bar>
+  
+  
+  </ion-view>

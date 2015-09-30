@@ -1,0 +1,26 @@
+  <ion-view title="Dynamic Slides" ng-controller="TourCtrl" hide-nav-bar="true">
+      <ion-nav-buttons side="left">
+        <button menu-toggle="" class="button button-positive button-clear no-animation" ng-click="previous()" ng-if="data.slideIndex > 0">
+          Previous Slide
+        </button>
+      </ion-nav-buttons>
+      <ion-nav-buttons side="right">
+        <button class="button button-positive button-clear no-animation" ng-click="next()" ng-if="data.slideIndex < data.numViewableSlides - 1">
+          Next
+        </button>
+      </ion-nav-buttons>
+   <ion-slide-box on-slide-changed="slideHasChanged($index)">
+  <ion-slide>
+    <div class="box blue slide" ><h1>BLUE</h1>
+	<button ng-click="nextSlide()">Next slide!</button>
+	
+	</div>
+  </ion-slide>
+  <ion-slide>
+    <div class="box slide yellow"><h1>YELLOW</h1></div>
+  </ion-slide>
+  <ion-slide>
+    <div class="box slide pink"><h1>PINK</h1></div>
+  </ion-slide>
+</ion-slide-box>
+    </ion-view>

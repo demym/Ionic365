@@ -1,0 +1,11 @@
+{
+  "name": "Ionic265",
+  "app_id": "Ionic365",
+  "proxies": [
+    {
+      "path": "/ibmlogin",
+      "proxyUrl": "https://www-304.ibm.com/easytools/runtime/demo/protect/fstore/admin/webservices/authentication.wss"
+    }
+  ]
+}
+

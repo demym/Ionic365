@@ -1,0 +1,32 @@
+<ion-modal-view  title="Edit customer" style="top:10px;  bottom: 0;  left: 0; right: 0;  width: 100% ;height:100%;"  hide-back-button="false">
+ <ion-nav-bar>
+  <ion-nav-buttons side="left">
+   <button class="button button-clear " ng-click="closeModal(1)">Cancel</button>
+  </ion-nav-buttons>
+
+  <ion-nav-buttons side="right">
+   <button class="button button-positive fixbutton" >Activate user</button>
+    <button class="button button-positive fixbutton" ng-click="saveCustomer()">SAVE</button>
+  </ion-nav-buttons>
+  </ion-nav-bar>
+   
+  <ion-content class="padding has-header">
+    <label class="item item-input  item-stacked-label ">
+  <span class="input-label">Customer name</span>
+    <input ng-model="data.customername" type="text" placeholder="Customer name">
+  </label>
+  <label class="item item-input  item-stacked-label">
+  <span class="input-label">IBM Salesrep e-mail </span>
+    <input ng-model="data.isr_email" type="text" placeholder="IBM Salesrep e-mail">
+  </label>
+   <label class="item item-input  item-stacked-label">
+  <span class="input-label">IBM Salesrep name</span>
+    <input ng-model="data.isr_name" type="text" placeholder="IBM Salesrep name">
+  </label>
+   <label class="item item-input  item-stacked-label">
+  <span class="input-label">IBM Salesrep personal page url</span>
+    <input ng-model="data.isr_personalpage" type="text" placeholder="IBM Salesrep personal page url">
+  </label>
+  
+  </ion-content>
+</ion-modal-view>

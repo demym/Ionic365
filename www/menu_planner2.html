@@ -1,0 +1,58 @@
+<ion-side-menus>
+
+  <ion-pane ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button class="button-clear"><i class="icon ion-chevron-left"></i> Back</ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+  </ion-pane>
+
+  <ion-side-menu side="left">
+    <header class="bar bar-header bar-stable">
+      <h1 class="title">&nbsp;</h1>
+    </header>
+    <ion-content class="has-header">
+      <ion-list>
+        <ion-item nav-clear menu-close href="#/app/homepage">
+          <i class="icon ion-home"></i>&nbsp;&nbsp;BUSCOPAN
+        </ion-item>
+       
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+  
+  
+  <ion-side-menu side="right" ng-controller="HomepageCtrl">
+    <header class="bar bar-header bar-stable">
+      <h1 class="title">Menghiacaz</h1>
+    </header>
+    <ion-content class="has-header">
+      <ion-list>
+        <ion-item nav-clear menu-close  style="font-size: 13px" >
+          <b>{{useremail}}</b><br>
+		   {{username}}<br>
+		   <span style="color: gray">{{userrole}}<span>
+        </ion-item>
+       
+         <ion-item nav-clear menu-close href="#/app/mymessages">
+		 <i class="icon ion-ios-recording"></i>&nbsp;&nbsp;Change password
+        </ion-item>
+       
+		<ion-item nav-clear menu-close href="#" ng-controller="AppCtrl" ng-click="logOut()">
+          <i class="icon ion-log-in"></i>&nbsp;&nbsp;Logout
+        </ion-item>
+		<ion-item nav-clear menu-close href="#" ng-controller="AppCtrl" ng-click="closeApp()">
+          <i class="icon ion-android-exit"></i>&nbsp;&nbsp;Close Client365
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+  
+   
+  
+  
+  
+
+  
+</ion-side-menus>
+

@@ -1,0 +1,162 @@
+ <ion-view title="IBM Client365"   hide-back-button="true" >
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+
+
+		<div class="row">
+		<style type="text/css">
+			.layout-homepage {
+				position: absolute;
+				right: 0px;
+				left: 0px;
+				top: 0px;
+				bottom: 0px;
+				padding: 15px;
+				/*overflow: hidden;*/
+			}
+			.header {
+				height: 100%;
+			}
+			.free-wall-homepage {
+				width: 100%;
+				height: 100%;
+			}
+
+			@keyframes start {
+				from { transform: scale(0);	}
+				to { transform: scale(1);}
+			}
+
+			@-webkit-keyframes start {
+				from { -webkit-transform: scale(0);	}
+				to { -webkit-transform: scale(1); }
+			}
+
+			.free-wall-homepage .brick[data-state="init"] {
+				display: block;
+			}
+
+			.free-wall-homepage .brick[data-state="start"]  {
+				display: block;
+				animation: start 0.5s;
+				-webkit-animation: start 0.5s;
+			}
+
+			.free-wall-homepage .brick[data-state="move"]  {
+				transition: top 0.5s, left 0.5s, width 0.5s, height 0.5s;
+				-webkit-transition: top 0.5s, left 0.5s, width 0.5s, height 0.5s;
+			}
+		</style> 
+
+		<div class="layout layout-homepage">
+			<div id="freewall-homepage" class="free-wall free-wall-homepage"></div>
+		</div> 
+
+       
+	<script type="text/javascript">
+	        
+			//goWall(); 
+			
+			
+			
+			
+			
+			/*
+			
+			var temp = "<div class='brick' style='width:{width}px; height: {height}px; background-color: {color}'><div class='cover'>{BodyDiv}</div></div>";
+			var colour = [
+				"rgb(142, 68, 173)",
+				"rgb(243, 156, 18)",
+				"rgb(211, 84, 0)",
+				"rgb(0, 106, 63)",
+				"rgb(204, 190, 0)",
+				"rgb(192, 57, 43)",
+				"rgb(135, 0, 0)",
+				"rgb(142, 68, 173)"
+			];
+
+			var contenutobox = [
+				"<h1>IBM Client365</h1><br><h2 id='welcome'>Welcome</h2><br><h2> to a new social way to communicate with IBM</h2>",
+				"<div class='feature-wrap circle TestoIconFreeWallNone' onclick='gotoCalendar()'><i class='fa fa-calendar-o'></i><h1>Planning</h1><br /><h2>Meetings, Events, Agenda</h2></div>",
+				"<div class='feature-wrap circle TestoIconFreeWallLeft' onclick='gotoReachMe()'><i class='fa fa-street-view'></i><br><h1>Reach me</h1><br /><h2>Anywhere, Anyway, Anytime</h2></div>",
+				"<div class='feature-wrap circle TestoIconFreeWallNone' onclick='gotoElib()'><i class='fa fa-book'></i><h1>e-library</h1><br /><h2>Send, Get, Share</h2></div>",
+				"<div class='feature-wrap circle TestoIconFreeWallLeft' onclick='gotoSocial()'><i class='fa fa-comments-o'></i><h1>Social</h1><br /><h2>Feel the World</h2><br><img src='img/social/LinkedinSquare.png' border='0' class='social'><img src='img/social/TwitterSquare.png' border='0' class='social'><img src='img/social/GoogleplusSquare.png' border='0' class='social'></div>",
+				"<div class='feature-wrap circle TestoIconFreeWallLeft' onclick='gotoTryAndBuy()'><i class='fa fa-life-ring'></i><h1>Try & Buy</h1><br /><h2>Now for free</h2></div>",
+				"<div class='feature-wrap circle TestoIconFreeWallLeft' onclick='gotoTools()'><i class='fa fa-puzzle-piece'></i><h1>Tools</h1><br /><h2>Additional capabilities</h2></div>",
+				"<div class='feature-wrap circle TestoIconFreeWallNone' onclick=''><a id='btnAccount' href='#accountPanel' data-icon='user'><i class='fa fa-user'></i><br><h1>Account</h1></a><br /><h3>User Management</h3><br><br><h3 id='homeusername'></h3><br><h3  id='homerole'></h3></div>",
+				"<hr><h5><a href='http://www.ibm.com/privacy/it/it/'>Privacy</a></h5><hr><h5><a href='http://www.ibm.com/legal/it/it/'>Condizioni Utilizzo</a></h5><hr>",
+				"<div class='feature-wrap circle TestoIconFreeWallLeft' onclick='gotoNews()'><i class='fa fa-newspaper-o'></i><h1>My Message</h1><br /><h2>Direct feed from Personal Page</h2></div>"
+			];
+
+	// <div class='madewithIBM'><h5><a href=javascript:window.open('http://www.ibm.com/smarterplanet/it/it/madewithibm/','_system') >Guarda →</a></h5></div>		
+
+			var colorfix = [
+				"rgb(142, 68, 173)",
+				"rgb(255, 153, 0)",
+				"rgb(41, 128, 185)",
+				"rgb(255, 0, 153)",
+				"rgb(0, 255, 102)",
+				"rgb(0, 201, 255)",
+				"rgb(227, 45, 45)",
+				"rgb(39, 174, 96)",
+				"rgb(204, 190, 0)",
+				"rgb(0, 106, 63)",
+				"rgb(39, 174, 96)"
+			];
+			var w = 1, h = 1, html = '', color = '', limitItem = 10;
+
+html += temp.replace(/\{height\}/g, "150").replace(/\{width\}/g, "450").replace("{color}", colorfix[0]).replace("{BodyDiv}",contenutobox[0]); // Welcome Box
+html += temp.replace(/\{height\}/g, "300").replace(/\{width\}/g, "300").replace("{color}", colorfix[1]).replace("{BodyDiv}",contenutobox[1]); // Planning Box
+html += temp.replace(/\{height\}/g, "150").replace(/\{width\}/g, "300").replace("{color}", colorfix[2]).replace("{BodyDiv}",contenutobox[2]); // Reach Me
+html += temp.replace(/\{height\}/g, "300").replace(/\{width\}/g, "150").replace("{color}", colorfix[3]).replace("{BodyDiv}",contenutobox[3]); // Social
+html += temp.replace(/\{height\}/g, "150").replace(/\{width\}/g, "300").replace("{color}", colorfix[4]).replace("{BodyDiv}",contenutobox[4]); // Library
+html += temp.replace(/\{height\}/g, "150").replace(/\{width\}/g, "450").replace("{color}", colorfix[5]).replace("{BodyDiv}",contenutobox[5]); // Try & Buy
+html += temp.replace(/\{height\}/g, "150").replace(/\{width\}/g, "300").replace("{color}", colorfix[6]).replace("{BodyDiv}",contenutobox[6]);  // Tools
+
+html += temp.replace(/\{height\}/g, "150").replace(/\{width\}/g, "300").replace("{color}", colorfix[8]).replace("{BodyDiv}",contenutobox[9]);  // New Box
+
+html += temp.replace(/\{height\}/g, "150").replace(/\{width\}/g, "150").replace("{color}", colorfix[9]).replace("{BodyDiv}",contenutobox[8]);
+
+html += temp.replace(/\{height\}/g, "150").replace(/\{width\}/g, "300").replace("{color}", colorfix[7]).replace("{BodyDiv}",contenutobox[7]);
+
+html += temp.replace(/\{height\}/g, "150").replace(/\{width\}/g, "150").replace("background-color: {color}","background: url(img/logo/madewithIBM4.png); background-size:contain").replace("{BodyDiv}"," ");
+
+          alert(html)
+			//jQuery("#freewall-homepage").append(html);
+            jQuery("#freewall-homepage").html("<div>colcazo</div>");			
+alert(jQuery("#freewall-homepage").html());
+			
+             
+			function goWall() {
+			 colog("gowall")
+			var wall = new Freewall("#freewall-homepage"); 
+			colog(JSON.stringify(wall))
+				wall.reset({
+					selector: '.brick',
+					animate: false,
+					cellW: 160,
+					cellH: 160,
+					delay: 30,
+					onResize: function() {
+						wall.refresh(jQuery(window).width() - 30,jQuery(window).height() - 30);
+					}
+				});
+				// caculator width and height for IE7;
+				wall.fitZone(jQuery(window).width() - 30 , jQuery(window).height() - 30);
+			}
+			
+
+			*/
+
+
+		</script> 
+			
+	</div>
+	
+	  </ion-content>
+  
+
+
+</ion-view>
